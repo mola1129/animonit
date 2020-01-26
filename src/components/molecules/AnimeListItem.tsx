@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 type Props = {
-  data?: string;
+  title?: string;
 };
 
 const AnimeListItem: React.FC<Props> = () => {

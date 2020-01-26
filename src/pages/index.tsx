@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-
-const test: NextPage = () => <h1>Welcome to Next!</h1>;
+import HeaderBar from "@/components/molecules/HeaderBar";
+const test: NextPage = () => <HeaderBar />;
 
 export default test;

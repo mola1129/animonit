@@ -6,7 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  headerBar: {
     flexGrow: 1
   },
   headerButton: {
@@ -14,11 +14,11 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const HeaderBar = (): JSX.Element => {
+const HeaderBar: React.FC<{}> = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.headerBar}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

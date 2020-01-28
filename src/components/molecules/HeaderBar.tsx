@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const HeaderBar = (): JSX.Element => {
+const HeaderBar: React.FC<{}> = () => {
   const classes = useStyles();
 
   return (

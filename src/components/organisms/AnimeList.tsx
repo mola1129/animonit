@@ -1,6 +1,5 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import AnimeListItem from "@/components/molecules/AnimeListItem";
 
 type Props = {
   times: number;

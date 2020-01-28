@@ -2,13 +2,6 @@ import React from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
-function a11yProps(index: number): object {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`
-  };
-}
-
 type HeaderTabProps = {
   // タブで選択するラベル
   label: Array<string>;
@@ -30,8 +23,9 @@ const HeaderTab: React.FC<HeaderTabProps> = props => {
         variant="fullWidth"
         aria-label="full width tabs"
       >
+        {/* key={index}はダメ */}
         {label.map((data, index) => {
-          return <Tab key={index} label={data} {...a11yProps(index)} />;
+          return <Tab key={index} label={data} />;
         })}
       </Tabs>
     </>

@@ -14,6 +14,7 @@ const TabContents: React.FC<TabContentsProps> = props => {
   const count = props.count;
   return (
     <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
+      {/* count数分コンテンツを配置 */}
       {[...Array(count)].map((data, index) => {
         return (
           <TabContent key={index} value={value} index={index}>

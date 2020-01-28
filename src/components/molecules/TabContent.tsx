@@ -2,21 +2,15 @@ import Box from "@material-ui/core/Box";
 
 type TabContentProps = {
   children?: React.ReactNode;
-  dir?: string;
-  index: number;
   value: number;
+  index: number;
 };
 
 const TabContent: React.FC<TabContentProps> = props => {
-  const { children, value, index, ...other } = props;
+  const { children, value, index } = props;
 
   return (
-    <div
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
+    <div hidden={value != index ? true : false}>
       {value === index && <Box>{children}</Box>}
     </div>
   );

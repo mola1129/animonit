@@ -21,7 +21,7 @@ const MainContent: React.FC<{}> = () => {
     <>
       <HeaderTab label={weekend} value={value} onTapped={handleTapped} />
       <TabContents value={value} onSwiped={handleSwiped} count={weekend.length}>
-        <AnimeList times={5}>
+        <AnimeList times={8}>
           <AnimeListItem />
         </AnimeList>
       </TabContents>

@@ -2,7 +2,6 @@ import React from "react";
 import HeaderTab from "@/components/molecules/HeaderTab";
 import TabContents from "@/components/organisms/TabContents";
 import AnimeList from "@/components/organisms/AnimeList";
-import AnimeListItem from "@/components/molecules/AnimeListItem";
 
 const MainContent: React.FC<{}> = () => {
   // 選択しているタブの番号を管理
@@ -21,9 +20,7 @@ const MainContent: React.FC<{}> = () => {
     <>
       <HeaderTab label={weekend} value={value} onTapped={handleTapped} />
       <TabContents value={value} onSwiped={handleSwiped} count={weekend.length}>
-        <AnimeList times={8}>
-          <AnimeListItem />
-        </AnimeList>
+        <AnimeList times={8} />
       </TabContents>
     </>
   );

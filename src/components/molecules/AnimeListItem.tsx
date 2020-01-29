@@ -5,14 +5,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Switch from "@material-ui/core/Switch";
+import { ListChildComponentProps } from "react-window";
 
-type Props = {
-  title?: string;
-};
+// type AnimeListItemProps = ListChildComponentProps & {
+//   title?: string;
+// };
 
-const AnimeListItem: React.FC<Props> = () => {
+const AnimeListItem: React.FC<ListChildComponentProps> = props => {
+  const { index, style } = props;
   return (
-    <>
+    <div key={index} style={style}>
       <ListItem>
         <ListItemAvatar>
           <Avatar alt="anime image" />
@@ -24,7 +26,7 @@ const AnimeListItem: React.FC<Props> = () => {
         <Switch color="primary" />
       </ListItem>
       <Divider />
-    </>
+    </div>
   );
 };
 

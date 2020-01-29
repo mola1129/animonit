@@ -1,16 +1,37 @@
 import React from "react";
-import List from "@material-ui/core/List";
+import { FixedSizeList } from "react-window";
+import AnimeListItem from "@/components/molecules/AnimeListItem";
+import AutoSizer from "react-virtualized-auto-sizer";
 
-type Props = {
+type AnimeListProps = {
   times: number;
 };
 
-const AnimeList: React.FC<Props> = props => {
-  const items = [];
-  for (let i = 0; i < props.times; i++) {
-    items.push(props.children);
-  }
-  return <List>{items}</List>;
+const AnimeList: React.FC<AnimeListProps> = props => {
+  return (
+    <div style={{ display: "flex" }}>
+      <div
+        style={{
+          flex: "1 1 auto",
+          // or
+          height: 600
+        }}
+      >
+        <AutoSizer>
+          {({ height, width }): React.ReactElement => (
+            <FixedSizeList
+              height={height}
+              itemCount={props.times}
+              itemSize={85}
+              width={width}
+            >
+              {AnimeListItem}
+            </FixedSizeList>
+          )}
+        </AutoSizer>
+      </div>
+    </div>
+  );
 };
 
 export default AnimeList;

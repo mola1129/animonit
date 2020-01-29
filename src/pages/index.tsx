@@ -5,17 +5,17 @@ import FooterNavigation from "@/components/organisms/FooterNavigation";
 import { makeStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
-// const useStyles = makeStyles((theme: Theme) => ({
-//   root: {
-//     margin: "0 auto"
-//     // [theme.breakpoints.up("md")]: {
-//     //   width: "80%"
-//     // },
-//     // [theme.breakpoints.up("lg")]: {
-//     //   width: "60%"
-//     // }
-//   }
-// }));
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    margin: "0 auto"
+    // [theme.breakpoints.up("md")]: {
+    //   width: "80%"
+    // },
+    // [theme.breakpoints.up("lg")]: {
+    //   width: "60%"
+    // }
+  }
+}));
 
 const Index: NextPage = () => {
   const classes = useStyles();

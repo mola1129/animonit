@@ -29,6 +29,7 @@
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
     "@types/react": "^16.9.19",
+    "@types/react-virtualized-auto-sizer": "^1.0.0",
     "@types/react-window": "^1.8.1",
     "babel-core": "^6.26.3",
     "babel-jest": "^25.1.0",

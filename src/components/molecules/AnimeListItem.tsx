@@ -1,32 +1,49 @@
 import React from "react";
-import ListItem from "@material-ui/core/ListItem";
-import Divider from "@material-ui/core/Divider";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import Switch from "@material-ui/core/Switch";
-import { ListChildComponentProps } from "react-window";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 
-// type AnimeListItemProps = ListChildComponentProps & {
-//   title?: string;
-// };
+type AnimeListItemProps = {
+  title: string;
+  image: string;
+  episode: number;
+  channel: string;
+};
 
-const AnimeListItem: React.FC<ListChildComponentProps> = props => {
-  const { index, style } = props;
+const AnimeListItem: React.FC<AnimeListItemProps> = props => {
+  const { title, image, episode, channel } = props;
   return (
-    <div key={index} style={style}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar alt="anime image" />
-        </ListItemAvatar>
-        <ListItemText
-          primary="タイトル"
-          secondary={<>{"放送局: 放送時間"}</>}
-        />
-        <Switch color="primary" />
-      </ListItem>
-      <Divider />
-    </div>
+    <Card>
+      <CardMedia component="img" alt="Anime" image={image}></CardMedia>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {`${episode}`}
+        </Typography>
+      </CardContent>
+    </Card>
+
+    // <div key={data.data[index].id} style={style}>
+    //   <ListItem>
+    //     <ListItemAvatar>
+    //       <Avatar
+    //         variant="square"
+    //         src={data.data[index].work.images.recommended_url}
+    //       />
+    //     </ListItemAvatar>
+    //     <ListItemText
+    //       primary={data.data[index].work.title}
+    //       secondary={
+    //         <>{`第${data.data[index].episode.number}話 ${data.data[index]
+    //           .episode.title || ""} ${data.data[index].channel.name}`}</>
+    //       }
+    //     />
+    //   </ListItem>
+    //   <Divider />
+    // </div>
   );
 };
 

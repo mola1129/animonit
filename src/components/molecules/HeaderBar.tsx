@@ -7,7 +7,9 @@ import HomeIcon from "@material-ui/icons/Home";
 
 const useStyles = makeStyles(() => ({
   headerBar: {
-    flexGrow: 1
+    position: "fixed",
+    top: "0",
+    width: "100%"
   },
   headerButton: {
     margin: "0 auto"

@@ -3,47 +3,43 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles({
+  root: {
+    width: "500px",
+    height: "370px",
+    borderRadius: "5%"
+  }
+});
 
 type AnimeListItemProps = {
-  title: string;
+  name: string;
   image: string;
-  episode: number;
-  channel: string;
+  episode: { numberText: number; title: string };
+  channelName: string;
+  startTime: string;
 };
 
 const AnimeListItem: React.FC<AnimeListItemProps> = props => {
-  const { title, image, episode, channel } = props;
+  const { name, image, episode, channelName, startTime } = props;
+  const classes = useStyles();
   return (
-    <Card>
-      <CardMedia component="img" alt="Anime" image={image}></CardMedia>
+    <Card className={classes.root} variant="outlined">
+      <CardMedia
+        component="img"
+        alt="Anime"
+        image={image === "" ? "/no-image.png" : image}
+      />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {title}
+        <Typography gutterBottom variant="h6" component="h2">
+          {name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {`${episode}`}
+          {`${episode.numberText} ${episode.title} ${channelName} ${startTime}`}
         </Typography>
       </CardContent>
     </Card>
-
-    // <div key={data.data[index].id} style={style}>
-    //   <ListItem>
-    //     <ListItemAvatar>
-    //       <Avatar
-    //         variant="square"
-    //         src={data.data[index].work.images.recommended_url}
-    //       />
-    //     </ListItemAvatar>
-    //     <ListItemText
-    //       primary={data.data[index].work.title}
-    //       secondary={
-    //         <>{`第${data.data[index].episode.number}話 ${data.data[index]
-    //           .episode.title || ""} ${data.data[index].channel.name}`}</>
-    //       }
-    //     />
-    //   </ListItem>
-    //   <Divider />
-    // </div>
   );
 };
 

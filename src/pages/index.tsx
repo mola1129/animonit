@@ -1,10 +1,7 @@
 import { NextPage } from "next";
 import HeaderBar from "@/components/molecules/HeaderBar";
-import FooterNavigation from "@/components/organisms/FooterNavigation";
 import { makeStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
-import HeaderTab from "@/components/molecules/HeaderTab";
-import TabContents from "@/components/organisms/TabContents";
 import AnimeList from "@/components/organisms/AnimeList";
 import React from "react";
 import fetch from "isomorphic-unfetch";
@@ -18,6 +15,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     // [theme.breakpoints.up("lg")]: {
     //   width: "60%"
     // }
+  },
+  content: {
+    paddingTop: "80px"
   }
 }));
 
@@ -28,27 +28,14 @@ type Props = {
 const Index: NextPage<Props> = props => {
   const programs = props.data.programs;
 
-  const [value, setValue] = React.useState(0);
-
-  function handleTapped(event: React.ChangeEvent<{}>, newValue: number): void {
-    setValue(newValue);
-  }
-
-  function handleSwiped(index: number): void {
-    setValue(index);
-  }
-
-  const weekend = ["月", "火", "水", "木", "金", "土", "日"];
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <HeaderBar />
-      <HeaderTab label={weekend} value={value} onTapped={handleTapped} />
-      <TabContents value={value} onSwiped={handleSwiped} count={weekend.length}>
-        <AnimeList data={programs} times={programs.length} />
-      </TabContents>
-      <FooterNavigation />
+      <div className={classes.content}>
+        <AnimeList data={programs} totalCount={programs.length} />
+      </div>
     </div>
   );
 };

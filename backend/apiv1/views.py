@@ -7,9 +7,9 @@ from config.settings.base import BASE_DIR
 import os
 import environ
 
+# Read environment variable
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
-
 ANNICT_ACCESS_TOKEN = env('ANNICT_ACCESS_TOKEN')
 
 

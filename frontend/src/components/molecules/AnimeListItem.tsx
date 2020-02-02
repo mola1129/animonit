@@ -15,14 +15,15 @@ const useStyles = makeStyles({
 
 type AnimeListItemProps = {
   name: string;
-  image: string;
+  startTime: string;
+  weekday: string;
   episode: { numberText: number; title: string };
   channelName: string;
-  startTime: string;
+  image: string;
 };
 
 const AnimeListItem: React.FC<AnimeListItemProps> = props => {
-  const { name, image, episode, channelName, startTime } = props;
+  const { name, startTime, weekday, episode, channelName, image } = props;
   const classes = useStyles();
   return (
     <Card className={classes.root} variant="outlined">
@@ -36,7 +37,7 @@ const AnimeListItem: React.FC<AnimeListItemProps> = props => {
           {name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {`${episode.numberText} ${episode.title} ${channelName} ${startTime}`}
+          {`${episode.numberText} ${episode.title} ${channelName} ${weekday} ${startTime}`}
         </Typography>
       </CardContent>
     </Card>

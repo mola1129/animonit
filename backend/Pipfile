@@ -12,6 +12,14 @@ django = "*"
 djangorestframework = "*"
 mysqlclient = "*"
 django-cors-headers = "*"
+django-environ = "*"
+requests = "*"
+python-dateutil = "*"
+djangorestframework-camel-case = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+dev = "python3 manage.py runserver"
+migrate = "python3 manage.py migrate"

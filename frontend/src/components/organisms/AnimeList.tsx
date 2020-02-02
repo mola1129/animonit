@@ -26,14 +26,12 @@ const AnimeList: React.FC<AnimeListProps> = props => {
           {[...Array(totalCount)].map((number, index) => (
             <Grid key={data[index].id} item>
               <AnimeListItem
-                name={data[index].work.title}
-                image={data[index].work.images.facebook.og_image_url}
-                episode={{
-                  numberText: data[index].episode.number_text,
-                  title: data[index].episode.title
-                }}
-                channelName={data[index].channel.name}
-                startTime={data[index].started_at}
+                name={data[index].name}
+                startTime={data[index].startTime}
+                weekday={data[index].weekday}
+                episode={data[index].episode}
+                channelName={data[index].channelName}
+                image={data[index].image}
               />
             </Grid>
           ))}

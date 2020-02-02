@@ -26,7 +26,7 @@ type Props = {
 };
 
 const Index: NextPage<Props> = props => {
-  const programs = props.data.programs;
+  const broadcasts = props.data.broadcasts;
 
   const classes = useStyles();
 
@@ -34,7 +34,7 @@ const Index: NextPage<Props> = props => {
     <div className={classes.root}>
       <HeaderBar />
       <div className={classes.content}>
-        <AnimeList data={programs} totalCount={programs.length} />
+        <AnimeList data={broadcasts} totalCount={broadcasts.length} />
       </div>
     </div>
   );
@@ -55,9 +55,7 @@ Index.getInitialProps = async function() {
     ":" +
     ("0" + date.getUTCSeconds()).slice(-2);
   const token = "";
-  const res = await fetch(
-    `https://api.annict.com/v1/me/programs?sort_started_at=asc&filter_started_at_gt=${now}&access_token=${token}`
-  );
+  const res = await fetch(`http://localhost:8000/api/v1/anime/broadcast/get`);
   const data = await res.json();
   return { data };
 };

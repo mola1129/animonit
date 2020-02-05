@@ -10,12 +10,14 @@ flake8 = "*"
 [packages]
 django = "*"
 djangorestframework = "*"
-mysqlclient = "*"
 django-cors-headers = "*"
 django-environ = "*"
 requests = "*"
 python-dateutil = "*"
 djangorestframework-camel-case = "*"
+gunicorn = "*"
+dj-database-url = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

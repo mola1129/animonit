@@ -10,3 +10,4 @@ local.py
 __pycache__/
 db.sqlite3
 .env
+db.sqlite3

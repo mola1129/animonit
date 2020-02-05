@@ -8,4 +8,4 @@
 </p>
 
 ##  App URL
-### **https://animonit.now.sh/**
+### **https://animonit.com/**

@@ -65,7 +65,8 @@ TEMPLATES = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:6000",
+    "https://animonit.com",
+    "http://localhost:3000",
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'

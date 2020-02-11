@@ -40,7 +40,7 @@ const Index: NextPage<Props> = props => {
   );
 };
 
-Index.getInitialProps = async function() {
+Index.getInitialProps = async function () {
   const date = new Date();
   const now =
     date.getUTCFullYear() +
@@ -55,7 +55,7 @@ Index.getInitialProps = async function() {
     ":" +
     ("0" + date.getUTCSeconds()).slice(-2);
   const token = "";
-  const res = await fetch(`http://localhost:8000/api/v1/anime/broadcast/get`);
+  const res = await fetch(`https://animonit.herokuapp.com/api/v1/anime/broadcast/get`);
   const data = await res.json();
   return { data };
 };

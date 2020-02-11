@@ -1,4 +1,5 @@
 import App from "next/app";
+import Head from "next/head";
 import { ThemeProvider } from "@material-ui/styles";
 import { CssBaseline } from "@material-ui/core";
 
@@ -16,10 +17,15 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider theme={Mytheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <>
+        <Head>
+          <title>Animonit</title>
+        </Head>
+        <ThemeProvider theme={Mytheme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </>
     );
   }
 }

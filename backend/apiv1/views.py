@@ -44,17 +44,16 @@ class AnimeBroadcastList(APIView):
                 hour_28 += 24
                 start_time_jst += datetime.timedelta(days=-1)
 
-            start_time = str(start_time_jst.year) + '/' + \
-                str(start_time_jst.month) + '/' \
-                + str(start_time_jst.day) + 'T' + str(hour_28) + \
-                ':' + str(start_time_jst.minute).zfill(2)
-
-            weekday = week[start_time_jst.weekday()]
+            start_at = {
+                'date': str(start_time_jst.year) + '/' + str(start_time_jst.month) + '/' + str(start_time_jst.day),
+                'weekday': week[start_time_jst.weekday()],
+                'time': str(hour_28) + ':' + str(start_time_jst.minute).zfill(2)
+            }
 
             episode = {
                 'number_text': p['episode']['number_text'], 'title': p['episode']['title']}
 
-            anime = {'id': p['id'], 'name': p['work']['title'], 'start_time': start_time, 'weekday': weekday,
+            anime = {'id': p['id'], 'name': p['work']['title'], 'startAt': start_at,
                      'episode': episode, 'channel_name': p['channel']['name'], 'image': p['work']['images']['facebook']['og_image_url']}
 
             broadcasts['broadcasts'].append(anime)

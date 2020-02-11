@@ -1,13 +1,2 @@
 # Editor
 .vscode
-
-# Next.js
-node_modules
-.next
-
-# Django
-local.py
-__pycache__/
-db.sqlite3
-.env
-db.sqlite3

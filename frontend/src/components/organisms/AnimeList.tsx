@@ -20,15 +20,14 @@ const AnimeList: React.FC<AnimeListProps> = props => {
   const { data, totalCount } = props;
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} spacing={2}>
-      <Grid item xs={12}>
+    <Grid container className={classes.root} justify="center" spacing={2}>
+      <Grid item xs={11}>
         <Grid container justify="center" spacing={2}>
           {[...Array(totalCount)].map((number, index) => (
-            <Grid key={data[index].id} item>
+            <Grid key={data[index].id} item xs={12} sm={6} md={4}>
               <AnimeListItem
                 name={data[index].name}
-                startTime={data[index].startTime}
-                weekday={data[index].weekday}
+                startAt={data[index].startAt}
                 episode={data[index].episode}
                 channelName={data[index].channelName}
                 image={data[index].image}

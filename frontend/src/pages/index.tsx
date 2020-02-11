@@ -40,22 +40,10 @@ const Index: NextPage<Props> = props => {
   );
 };
 
-Index.getInitialProps = async function () {
-  const date = new Date();
-  const now =
-    date.getUTCFullYear() +
-    "/" +
-    ("0" + (date.getUTCMonth() + 1)).slice(-2) +
-    "/" +
-    ("0" + date.getUTCDate()).slice(-2) +
-    " " +
-    ("0" + date.getUTCHours()).slice(-2) +
-    ":" +
-    ("0" + date.getUTCMinutes()).slice(-2) +
-    ":" +
-    ("0" + date.getUTCSeconds()).slice(-2);
-  const token = "";
-  const res = await fetch(`https://animonit.herokuapp.com/api/v1/anime/broadcast/get`);
+Index.getInitialProps = async function() {
+  const res = await fetch(
+    `https://animonit.herokuapp.com/api/v1/anime/broadcast/get`
+  );
   const data = await res.json();
   return { data };
 };

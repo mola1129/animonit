@@ -7,9 +7,10 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   root: {
-    width: "500px",
-    height: "370px",
     borderRadius: "5%"
+  },
+  cardMedia: {
+    paddingTop: "56.25%"
   }
 });
 
@@ -27,16 +28,15 @@ const AnimeListItem: React.FC<AnimeListItemProps> = props => {
   return (
     <Card className={classes.root} variant="outlined">
       <CardMedia
-        component="img"
-        alt="Anime"
+        className={classes.cardMedia}
         image={image === "" ? "/no-image.png" : image}
       />
       <CardContent>
-        <Typography gutterBottom variant="h6" component="h2">
+        <Typography gutterBottom variant="h6" component="h3">
           {name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {`${episode.numberText} ${episode.title}`}
+          {`${episode.numberText} ${episode.title || ""}`}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           {`${channelName} ${startAt.date} (${startAt.weekday}) ${startAt.time}`}

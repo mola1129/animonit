@@ -40,8 +40,10 @@ const Index: NextPage<Props> = props => {
   );
 };
 
-Index.getInitialProps = async function () {
-  const res = await fetch(`https://animonit.herokuapp.com/api/v1/anime/broadcast/get`);
+Index.getInitialProps = async function() {
+  const res = await fetch(
+    `https://animonit.herokuapp.com/api/v1/anime/broadcast/get`
+  );
   const data = await res.json();
   return { data };
 };

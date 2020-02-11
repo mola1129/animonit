@@ -27,8 +27,7 @@ const AnimeList: React.FC<AnimeListProps> = props => {
             <Grid key={data[index].id} item>
               <AnimeListItem
                 name={data[index].name}
-                startTime={data[index].startTime}
-                weekday={data[index].weekday}
+                startAt={data[index].startAt}
                 episode={data[index].episode}
                 channelName={data[index].channelName}
                 image={data[index].image}
